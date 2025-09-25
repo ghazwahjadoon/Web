@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../assets/logo.png';
+
 function Navbar()
 {
     return(
-    <> <nav className="navbar navbar-expand-lg " style={{backgroundColor: "pink"}}>
-  <div className="container-fluid" style={{backgroundColor:"lavenderblush", height:"12vh", border:"1px solid  purple", width: "96vw"}}>
-    <a className="navbar-brand" href="#" style={{color:"purple"}}><i>Glowah Beauty</i></a>
+      
+<nav class="navbar navbar-light" style={{backgroundColor:"rgb(255,254,250) "}}>
+    <> <nav className="navbar navbar-expand-lg " >
+  <div className="container-fluid" style={{ height:"12vh",  width: "96vw"}}>
+    <a className="navbar-brand" href="#"><img src={logo} alt="Logo" style={{ height: "50px" }} /></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -13,9 +17,22 @@ function Navbar()
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Cart</a>
+         <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#" style={{color:"red"}}><b>SUMMER <br/>END SALE</b></a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#">lips</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Fragrences</a>
+        </li>
+         <li className="nav-item">
+          <a className="nav-link" href="#">Eyes</a>
+        </li>
+         <li className="nav-item">
+          <a className="nav-link" href="#">Nail It</a>
+        </li>
+        
         <li className="nav-item">
           <a className="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
@@ -27,9 +44,11 @@ function Navbar()
     </div>
   </div>
 </nav>
- <h1 style={{ textAlign: 'center' , color:"rgb(170, 51, 106)",textShadow: "5px 5px 5px"}}><i>Glowah Beauty</i></h1>
  
-    </>);
+ 
+    </>
+     </nav>
+     );
 
 }
 export default Navbar;

@@ -7,6 +7,7 @@ import primer from '../assets/primer.png';
 import lipstick from '../assets/lipstick.png';
 import foundation from '../assets/foundation.png';
 import makeupfixerfinalone from '../assets/makeupfixerfinalone.png';
+
 function Gallery()
 {   const products = [
     {
@@ -41,29 +42,7 @@ function Gallery()
       shades: ['Floral', 'Woody', 'Fresh'],
       image: perfume
     },
-    {
-      id: 5,
-      name: 'Lip Pencils',
-      category: 'Lip-liners',
-      price: 3500,
-      shades: ['Nude', 'Cherry', 'Plum'],
-      image: pencils
-    } ,  {
-      id: 6,
-      name: 'Makeup Fixer',
-      category: 'Makeup Fixer',
-      price: 1800,
-      shades: [],
-      image: makeupfixerfinalone
-    },
-    {
-      id: 7,
-      name:'Mascara',
-      category: 'Makeup',
-      price: 2500,
-      shades: ['black', 'purple', 'green'],
-      image: mascara
-    },
+    
     
   ];
     return (
