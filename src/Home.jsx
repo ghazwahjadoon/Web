@@ -12,48 +12,46 @@ function Home() {
   return (
     <div className='container-fluid' >
       <div className="row mb-3" >
-        <div className="col">
+        <div className="col-12">
           <Navbar/>
         </div>
         
 
       </div>
       <div className="row" >
-        <div className="col">
+        <div className="col-12">
           <Cover/>
         </div>
         </div>
         <br />
 
       <div className="row">
-        <div className="col">
-          <Gallery />
-        </div>
-      </div>
+           <Gallery />
+       </div>
       <br />
       <br />
-      <div className="row mb-5">
-        <div className="col">
+      <div className="row ">
+  <div className="col-12 ">
           <Secondcover />
         </div>
       </div>
-      <div className="row mb-5">
-        <div className="col">
+      <div className="row ">
+        <div className="col-md-6 col-lg-4">
           <Gallerysec />
         </div>
       </div>
-      <div className="row mb-5">
-        <div className="col">
+      <div className="row ">
+        <div className="col-12 col-lg-12 col-md-12">
           <ThirdCover />
         </div>
       </div>
-      <div className="row mb-5">
-        <div className="col">
+      <div className="row ">
+        <div className="col-12 col-lg-4 col-md-6">
           <Gallerysec3 />
         </div>
       </div>
       <div className="row" style={{height: "30vh"}}>
-        <div className="col">
+        <div className="col 12">
           <Footer/>
           
         </div>

@@ -46,9 +46,10 @@ function Gallery()
     
   ];
     return (
-        <div className="d-flex flex-wrap gap-3">
+     <>
       {products.map(product => (
-        <div key={product.id} className="card" style={{ width: '18rem' }}>
+        
+            <div key={product.id} className="card" style={{ width: '18rem' }}>
              <img src={product.image} className="card-img-top" alt={product.name}/>
              <div className='card-body'>
                 <h5 className="card-title">{product.name}</h5>
@@ -58,9 +59,11 @@ function Gallery()
                 </p>
 
              </div>
-        </div>
+     
+          </div>
+
       ))}
-    </div>
+     </>
       );
        
         
