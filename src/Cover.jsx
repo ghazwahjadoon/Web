@@ -4,7 +4,7 @@ function Cover()
 {
     return(
         <>
-        <img src={cover1f} alt="CoverPic" style={{ height: "500px" }} />
+        <img src={cover1f} alt="CoverPic" style={{ height: "85%" }} />
         </>
 
     );

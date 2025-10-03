@@ -7,57 +7,36 @@ import Secondcover from './Secondcover'
 import Gallerysec from './Gallerysec'
 import ThirdCover from  './Thirdcover'
 import Gallerysec3 from './Gallerysec3'
+import Login from './Login'
+import Signin from './Signin'
 
 function Home() {
   return (
-    <div className='container-fluid' >
-      <div className="row mb-3" >
+  <>
+  
+<div className="Container" >
+   <div className="row-12" > 
+         <div className="col-6">
+          
+          {/* /* <Login/> */}
+         </div> 
+         
+    <div/>
+ 
+      
         <div className="col-12">
-          <Navbar/>
+          
+           <Signin/>
+           {/* <h1>hi</h1> */}
+        </div>
         </div>
         
 
-      </div>
-      <div className="row" >
-        <div className="col-12">
-          <Cover/>
-        </div>
-        </div>
-        <br />
+    </div>  
 
-      <div className="row">
-           <Gallery />
-       </div>
-      <br />
-      <br />
-      <div className="row ">
-  <div className="col-12 ">
-          <Secondcover />
-        </div>
-      </div>
-      <div className="row ">
-        <div className="col-md-6 col-lg-4">
-          <Gallerysec />
-        </div>
-      </div>
-      <div className="row ">
-        <div className="col-12 col-lg-12 col-md-12">
-          <ThirdCover />
-        </div>
-      </div>
-      <div className="row ">
-        <div className="col-12 col-lg-4 col-md-6">
-          <Gallerysec3 />
-        </div>
-      </div>
-      <div className="row" style={{height: "30vh"}}>
-        <div className="col 12">
-          <Footer/>
-          
-        </div>
-      </div>
-    </div>
-  )
+
+    </>
+  );
 }
 
 export default Home
