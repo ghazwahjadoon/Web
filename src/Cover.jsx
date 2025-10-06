@@ -1,12 +1,29 @@
-import cover1f from './assets/cover1f.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';;
+import FirstPic from './assets/FirstPic.png';
+import Models from './assets/Models.png';
 function Cover()
 {
     return(
-        <>
-        <img src={cover1f} alt="CoverPic" style={{ height: "85%" }} />
-        </>
+        <>  <div className='container-fluid m-0 p-0'>
+            <div className="row ">
+                <div className='col-12 col-md-12 col-lg-12'  >
+                      
+                     <img src={Models} alt ='xyz' style={{height:"500px", width:"99%"}} 
+          />
+                      
+                     
+                </div>
+                 
+                   
+                </div>
+                </div>
+                 
+                
+           
+       
+       </>
 
     );
 }
-export default Cover
+export default Cover

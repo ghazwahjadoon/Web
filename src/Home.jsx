@@ -12,29 +12,48 @@ import Signin from './Signin'
 
 function Home() {
   return (
-  <>
+
+  <>  <div className='container-fluid m-0 p-0 'style={{ background: "linear-gradient(120deg, #fce4ec, #e8f5e9)",}}>
+       <div className='row'>
+          <div className='col'>
+              <Navbar/>
+          </div>
+       </div>
+       <div className='row'>
+         <div className='col'>
+              <Cover/>
+         </div>
+
+       </div>
+        <div className='row'>
+         <div className='col'>
+            <Gallery/>
+         </div>
+
+       </div>
+       <div className='row'>
+         <div className='col'>
+             
+            {/* <Gallerysec/> */}
+           
+            <Gallerysec3/>
+         </div>
+
+       </div>
+        <div className='row'>
+         <div className='col'>
+             
+            {/* <Gallerysec/> */}
+           
+            <Footer/>
+         </div>
+
+       </div>
+
+
+  </div>
   
-<div className="Container" >
-   <div className="row-12" > 
-         <div className="col-6">
-          
-          {/* /* <Login/> */}
-         </div> 
-         
-    <div/>
- 
-      
-        <div className="col-12">
-          
-           <Signin/>
-           {/* <h1>hi</h1> */}
-        </div>
-        </div>
-        
-
-    </div>  
-
-
+   
     </>
   );
 }
