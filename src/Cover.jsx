@@ -2,6 +2,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';;
 import FirstPic from './assets/FirstPic.png';
 import Models from './assets/Models.png';
+import CoverFinal from './assets/CoverFinal.jpg';
+import Coverwhite from './assets/Coverwhite.jpg';
+import co from './assets/co.png';
+import cover from './assets/covercheck.png';
+import c from './assets/covercheck3.jpeg';
 function Cover()
 {
     return(
@@ -9,7 +14,7 @@ function Cover()
             <div className="row ">
                 <div className='col-12 col-md-12 col-lg-12'  >
                       
-                     <img src={Models} alt ='xyz' style={{height:"500px", width:"99%"}} 
+                     <img src={c} alt ='xyz' style={{height:"650px", width:"100%"}} 
           />
                       
                      
