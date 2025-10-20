@@ -1,147 +1,160 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import "bootstrap/dist/css/bootstrap.min.css";
 import models from "./assets/models1.jpg";
 
+// Zod schema for validation
+const schema = z.object({
+  name: z.string().min(3, { message: "Full name must be at least 3 characters" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phone: z.string().min(10, { message: "Phone number must be at least 10 digits" }).optional(),
+  contactMethod: z.enum(["Email", "Phone", "Either"], { 
+    errorMap: () => ({ message: "Select a contact method" }) 
+  }),
+  service: z.string().min(3, { message: "Please specify a service" }),
+  datetime: z.string().min(1, { message: "Select a date and time" }),
+});
+
 function Booking() {
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data); // All form data as an object
+  };
+
   return (
-    <>
-      <div className="container py-5">
-        <div
-          className="row align-items-center bg-light rounded-4  p-4"
-          style={{ border: "2px solid #b04bbb" }}
-        >
+    <div
+      className="container-fluid py-5"
+      style={{ background: "linear-gradient(135deg, #ffe6f2, #fff0f5)", minHeight: "100vh" }}
+    >
+      <div
+        className="container bg-white rounded-5 shadow-lg p-5"
+        style={{ border: "2px solid #f5b2ca", maxWidth: "1000px" }}
+      >
+        <div className="row align-items-center">
+          {/* Left Side - Form */}
           <div className="col-12 col-md-6">
             <h1
               className="mb-4"
-              style={{
-                fontFamily: "Bradley Hand ITC, cursive",
-                color: "#a020f0",
-                fontWeight: "bold",
-              }}
+              style={{ fontFamily: "Bradley Hand ITC, cursive", color: "#e75480", fontWeight: "bold" }}
             >
-              Book Now
+              Book The Look You Want
             </h1>
 
-            <form>
-              
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {/* Full Name */}
               <div className="mb-3">
                 <label className="form-label fw-semibold">Full Name:</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control border-2 rounded-4"
                   placeholder="Enter your full name"
+                  style={{ borderColor: "#f5b2ca" }}
+                  {...register("name")}
                 />
+                {errors.name && <p className="text-danger">{errors.name.message}</p>}
               </div>
 
-             
+              {/* Email */}
               <div className="mb-3">
                 <label className="form-label fw-semibold">Email:</label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control border-2 rounded-4"
                   placeholder="example@email.com"
+                  style={{ borderColor: "#f5b2ca" }}
+                  {...register("email")}
                 />
+                {errors.email && <p className="text-danger">{errors.email.message}</p>}
               </div>
 
-             
+              {/* Phone */}
               <div className="mb-3">
                 <label className="form-label fw-semibold">Phone#:</label>
                 <input
                   type="tel"
-                  className="form-control"
+                  className="form-control border-2 rounded-4"
                   placeholder="+92 3xx xxx xxxx"
+                  style={{ borderColor: "#f5b2ca" }}
+                  {...register("phone")}
                 />
+                {errors.phone && <p className="text-danger">{errors.phone.message}</p>}
               </div>
 
-             
+              {/* Contact Method */}
               <div className="mb-3">
-                <label className="form-label fw-semibold">
-                  Preferred Method Of Contact:
-                </label>
+                <label className="form-label fw-semibold">Preferred Contact:</label>
                 <div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      type="radio"
-                      name="contact"
-                      id="emailContact"
-                      className="form-check-input"
-                    />
-                    <label
-                      htmlFor="emailContact"
-                      className="form-check-label"
-                    >
-                      Email
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      type="radio"
-                      name="contact"
-                      id="phoneContact"
-                      className="form-check-input"
-                    />
-                    <label
-                      htmlFor="phoneContact"
-                      className="form-check-label"
-                    >
-                      Phone#
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      type="radio"
-                      name="contact"
-                      id="eitherContact"
-                      className="form-check-input"
-                    />
-                    <label
-                      htmlFor="eitherContact"
-                      className="form-check-label"
-                    >
-                      Either
-                    </label>
-                  </div>
+                  {["Email", "Phone", "Either"].map((method) => (
+                    <div key={method} className="form-check form-check-inline">
+                      <input
+                        type="radio"
+                        className="form-check-input"
+                        id={method}
+                        value={method}
+                        {...register("contactMethod")}
+                      />
+                      <label htmlFor={method} className="form-check-label text-muted">
+                        {method}
+                      </label>
+                    </div>
+                  ))}
                 </div>
+                {errors.contactMethod && <p className="text-danger">{errors.contactMethod.message}</p>}
               </div>
 
-              
+              {/* Services */}
               <div className="mb-3">
-                <label className="form-label fw-semibold">
-                  Services Required:
-                </label>
+                <label className="form-label fw-semibold">Services Required:</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control border-2 rounded-4"
                   placeholder="e.g. Bridal Makeup, Party Makeup..."
+                  style={{ borderColor: "#f5b2ca" }}
+                  {...register("service")}
                 />
+                {errors.service && <p className="text-danger">{errors.service.message}</p>}
               </div>
 
-             
+              {/* Date */}
               <div className="mb-3">
-                <label className="form-label fw-semibold">Date and Time:</label>
-                <input type="datetime-local" className="form-control" />
+                <label className="form-label fw-semibold">Date & Time:</label>
+                <input
+                  type="datetime-local"
+                  className="form-control border-2 rounded-4"
+                  style={{ borderColor: "#f5b2ca" }}
+                  {...register("datetime")}
+                />
+                {errors.datetime && <p className="text-danger">{errors.datetime.message}</p>}
               </div>
 
-             
+              {/* Button */}
               <button
-                type="button"
-                className="btn btn-danger px-4 py-2 fw-semibold mt-2"
+                type="submit"
+                className="btn w-100 py-2 fw-semibold"
+                style={{ backgroundColor: "#e75480", color: "white", borderRadius: "30px" }}
               >
                 Confirm Booking
               </button>
             </form>
           </div>
 
-          
-          <div className="col-12 col-md-6 text-center">
+          {/* Right Side - Image */}
+          <div className="col-12 col-md-6 text-center mt-4 mt-md-0">
             <img
               src={models}
               alt="Model"
-              className="img-fluid rounded-4 "
-              style={{ maxHeight: "500px" }}
+              className="img-fluid rounded-5 shadow-sm"
+              style={{ maxHeight: "480px", border: "3px solid #f5b2ca" }}
             />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

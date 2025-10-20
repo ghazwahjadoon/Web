@@ -78,13 +78,17 @@ function Gallery() {
         {products.map(product => (
           <div 
             key={product.id} 
-            className="col-12 col-sm-6 col-md-4 col-lg-3  d-flex justify-content-center"
+            className="col-12 col-sm-6 col-md-4 col-lg-3   justify-content-center"
           >
             <div className="card w-100" style={{ width: "10rem" }}>
               <img 
                 className="card-img-top" 
                 src={product.image} 
                 alt={product.name} 
+           style={{
+    height: "350px",
+    objectFit: "cover",
+  }} 
               />
               <div className="card-body text-center">
                 <h5 className="card-title">{product.name}</h5>

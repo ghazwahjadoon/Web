@@ -30,6 +30,10 @@ function Services() {
          {id:6,name:'Artistic Makeup Look',image:bg},
        
   ]
+   const handleBookNow = (lookName) => {
+    console.log(`Booking for: ${lookName}`);
+  };
+
 
 
   return (
@@ -54,7 +58,10 @@ function Services() {
                 className="col-12 col-sm-12 col-md-6 col-lg-4 mb-2 d-flex justify-content-center"
               >
                 <div className="card" style={{ width: "28rem"}}>
-                  <img src={look.image} className="card-img-top" alt={look.name} />
+                  <img src={look.image} className="card-img-top" alt={look.name}  style={{
+    height: "550px",
+    objectFit: "cover",
+  }} />
                   <div className="card-body text-center ">
                     <p className="card-text" style={{ fontFamily: "Bradley Hand ITC" }}>
                       {look.name}
@@ -77,12 +84,15 @@ function Services() {
                 className="col-12 col-sm-12 col-md-6 col-lg-4 mb-2 d-flex justify-content-center"
               >
                 <div className="card" style={{ width: "28rem"}}>
-                  <img src={look.image} className="card-img-top" alt={look.name} />
+                  <img src={look.image} className="card-img-top" alt={look.name} style={{
+    height: "500px",
+    objectFit: "cover",
+  }}/>
                   <div className="card-body text-center ">
                     <p className="card-text" style={{ fontFamily: "Bradley Hand ITC" }}>
                       {look.name}
                     </p>
-                    <button type="button" class="btn btn-outline-dark">BOOK NOW</button>
+                    <button type="button" className="btn btn-outline-dark" onClick={() => handleBookNow(look.name)}>BOOK NOW</button>
                   </div>
                 </div>
               </div>

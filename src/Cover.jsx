@@ -14,7 +14,7 @@ function Cover()
             <div className="row ">
                 <div className='col-12 col-md-12 col-lg-12'  >
                       
-                     <img src={c} alt ='xyz' style={{height:"650px", width:"100%"}} 
+                     <img src={cover} alt ='xyz' style={{height:"650px", width:"100%"}} 
           />
                       
                      

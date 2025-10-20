@@ -1,4 +1,5 @@
 import React from "react";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Footer() {
   return (
@@ -30,6 +31,8 @@ function Footer() {
             <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
               <i className="fab fa-github"></i>
             </a>
+            <button style={{border:"1px solid black"}}> <FaXTwitter size={25} /></button>
+           
           </section>
         </div>
 
