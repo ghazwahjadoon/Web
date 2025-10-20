@@ -18,8 +18,8 @@ import SalesReport from './Adminportal/Reports/SalesReport';
 
 const  router=createBrowserRouter(
     [     {
-    path: "/",          // Parent route
-    element: <App />,   // App contains Navbar + Footer + <Outlet/>
+    path: "/",         
+    element: <App />,   
     children: [
         { path:'/', element: <Home/>},
         {path:'/Booking', element: <Booking/> },

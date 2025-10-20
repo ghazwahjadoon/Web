@@ -4,7 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Zod schema for validation
+
 const schema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
   password: z.string().min(6, { message: "Password must be at least 6 characters" }),
@@ -19,7 +19,7 @@ function Signin() {
   });
 
   const onSubmit = (data) => {
-    console.log(data); // All form data
+    console.log(data); 
   };
 
   return (

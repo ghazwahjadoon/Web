@@ -1,0 +1,26 @@
+/* Removes default margin/padding from entire page */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fff5f8; /* optional */
+}
+
+/* If you're using Bootstrap container or container-fluid */
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* If your dashboard has wrapper div */
+.dashboard-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Optional: make sure full width and height are covered */
+.admin-dashboard {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff5f8;
+}

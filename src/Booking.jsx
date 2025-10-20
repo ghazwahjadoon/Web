@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import "bootstrap/dist/css/bootstrap.min.css";
 import models from "./assets/models1.jpg";
 
-// Zod schema for validation
+
 const schema = z.object({
   name: z.string().min(3, { message: "Full name must be at least 3 characters" }),
   email: z.string().email({ message: "Invalid email address" }),
@@ -23,7 +23,7 @@ function Booking() {
   });
 
   const onSubmit = (data) => {
-    console.log(data); // All form data as an object
+    console.log(data); 
   };
 
   return (
@@ -36,7 +36,7 @@ function Booking() {
         style={{ border: "2px solid #f5b2ca", maxWidth: "1000px" }}
       >
         <div className="row align-items-center">
-          {/* Left Side - Form */}
+          {/* Left Side */}
           <div className="col-12 col-md-6">
             <h1
               className="mb-4"

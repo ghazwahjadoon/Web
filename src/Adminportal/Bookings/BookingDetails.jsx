@@ -1,14 +1,13 @@
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function BookingDetails() {
-  const { id } = useParams();
   const [booking, setBooking] = useState(null);
 
   useEffect(() => {
-    // In real app, fetch booking by ID
-    const dummyBooking = {
-      id,
+    // Dummy booking data
+    setBooking({
+      id: 1,
       name: "Sara Khan",
       email: "sara@gmail.com",
       phone: "0321-4567890",
@@ -17,16 +16,16 @@ function BookingDetails() {
       time: "2:00 PM",
       notes: "Needs heavy eye makeup.",
       status: "Pending",
-    };
-    setBooking(dummyBooking);
-  }, [id]);
+    });
+  }, []);
 
   if (!booking) return <p>Loading...</p>;
 
   return (
-    <div className="p-4">
-      <h3>Booking Details</h3>
-      <div className="card p-3">
+    <div className="container p-4">
+      <h3 className="mb-3">Booking Details</h3>
+
+      <div className="card p-3 shadow-sm">
         <p><b>Client:</b> {booking.name}</p>
         <p><b>Email:</b> {booking.email}</p>
         <p><b>Phone:</b> {booking.phone}</p>
@@ -39,7 +38,9 @@ function BookingDetails() {
         <div className="mt-3">
           <button className="btn btn-success me-2">Approve</button>
           <button className="btn btn-danger me-2">Cancel</button>
-          <Link to="/admin/bookings" className="btn btn-secondary">Back to List</Link>
+          <Link to="/bookingList" className="btn btn-secondary">
+            Back to List
+          </Link>
         </div>
       </div>
     </div>

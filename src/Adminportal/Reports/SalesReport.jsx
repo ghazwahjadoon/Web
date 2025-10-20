@@ -38,7 +38,7 @@ const reports = [
 function ReportsList() {
   return (
     <div className="p-4 bg-white rounded shadow-sm border">
-      <h2 className="text-center mb-4 text-uppercase fw-bold text-secondary">
+      <h2 className="text-center mb-4 text-uppercase  ">
         Customer Reports & Feedback
       </h2>
 

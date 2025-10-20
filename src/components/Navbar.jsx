@@ -13,8 +13,8 @@ function Navbar() {
          
 
   return (
-    <div className="container-fluid m-0 p-0">
-      <nav className="navbar navbar-expand-md navbar-light" style={{ backgroundColor:" white", height: "12vh", width: "100%" }}>
+    <div className="container-fluid m-0 p-0 ">
+      <nav className="navbar navbar-expand-md navbar-light" style={{backgroundColor: "#fff5f8",height: "12vh", width: "100%" }}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <img src={Whitelogo} alt="Logo" style={{ height: "60px" }} />

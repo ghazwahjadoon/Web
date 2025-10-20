@@ -5,7 +5,7 @@ function Admindashboard() {
   return (
     <>
       <div
-        className="container-fluid d-flex"
+        className="container-fluid  d-flex"
         style={{
           backgroundColor: "#fff5f8",
           minHeight: "100vh",
@@ -36,7 +36,7 @@ function Admindashboard() {
           </h2>
 
           <ul className="nav flex-column">
-            {/* Dashboard */}
+            
             <li className="nav-item mb-2">
               <Link
                 to="/admindashboard"
@@ -52,7 +52,7 @@ function Admindashboard() {
               </Link>
             </li>
 
-            {/* PRODUCTS DROPDOWN */}
+           
             <li className="nav-item mb-2">
               <details>
                 <summary
@@ -102,7 +102,7 @@ function Admindashboard() {
               </details>
             </li>
 
-            {/* REPORTS DROPDOWN */}
+          
             <li className="nav-item mb-2">
               <details>
                 <summary
@@ -136,7 +136,7 @@ function Admindashboard() {
               </details>
             </li>
 
-            {/* BOOKINGS DROPDOWN */}
+           
             <li className="nav-item mb-2">
               <details>
                 <summary
@@ -186,7 +186,7 @@ function Admindashboard() {
               </details>
             </li>
 
-            {/* CUSTOMERS */}
+           
             <li className="nav-item mb-2">
               <Link
                 to="/admin/customers"
@@ -202,7 +202,7 @@ function Admindashboard() {
               </Link>
             </li>
 
-            {/* LOGOUT */}
+           
             <li className="nav-item mt-auto">
               <Link
                 to="/logout"
@@ -219,10 +219,10 @@ function Admindashboard() {
           </ul>
         </div>
 
-        {/* MAIN CONTENT */}
+      
         <div className="container-fluid p-4">
           <div
-            className="d-flex justify-content-between align-items-center"
+            className="d-flex justify-content-between "
             style={{
               backgroundColor: "#ffeef3",
               padding: "15px 20px",
@@ -250,12 +250,9 @@ function Admindashboard() {
             }}
           >
             <h4 style={{ fontFamily: "Bradley Hand ITC", color: "#cc0044" }}>
-              Welcome back, Admin
+              Welcome 
             </h4>
-            <p>
-              Manage your products, bookings, and customers with ease.  
-              Stay fabulous while keeping your business running smoothly!
-            </p>
+           
           </div>
         </div>
       </div>

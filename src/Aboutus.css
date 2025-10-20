@@ -1,4 +1,4 @@
-/* --- Header Section --- */
+
 .about-header {
   background-color: #ffe4ec;
 }
@@ -15,7 +15,7 @@
   border-radius: 2px;
 }
 
-/* --- Intro Section --- */
+
 .about-text {
   font-family: "Times New Roman", serif;
   font-size: 17px;
@@ -25,13 +25,13 @@
 }
 .about-image {
   max-height: 300px;
-  transition: transform 0.3s ease;
+
 }
 .about-image:hover {
   transform: scale(1.05);
 }
 
-/* --- Vision Section --- */
+
 .about-vision {
   background-color: #fff0f5;
   padding: 40px;
@@ -50,7 +50,7 @@
   margin: 0 auto;
 }
 
-/* --- Contact Section --- */
+
 .about-contact {
   background-color: #ffcce0;
 }

@@ -1,51 +1,87 @@
 import React from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaGithub,
+  FaGoogle,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <>
-      <footer className="text-center bg-light">
-        {/* Social media section */}
-        <div className="container py-4">
-          <section className="mb-4 d-flex justify-content-center flex-wrap gap-3">
-            <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
-              <i className="fab fa-facebook-f"></i>
-            </a>
+    <footer
+      style={{
+        backgroundColor: "#fff5f8",
+        textAlign: "center",
+        padding: "40px 0",
+        fontFamily: "Poppins, sans-serif",
+        color: "#4a4a4a",
+      }}
+    >
+     
+      <h4 style={{ color: "#d63384", fontWeight: "600" }}>Stay Connected</h4>
+      <p style={{ fontSize: "15px", maxWidth: "400px", margin: "10px auto" }}>
+        Follow us on social media and stay updated with the latest trends 💖
+      </p>
 
-            <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
-              <i className="fab fa-twitter"></i>
-            </a>
+      {/* Social Icons */}
+      <div style={{ marginTop: "20px" }}>
+        <a href="#" style={iconStyle}>
+          <FaFacebookF />
+        </a>
+        <a href="#" style={iconStyle}>
+          <FaXTwitter />
+        </a>
+        <a href="#" style={iconStyle}>
+          <FaGoogle />
+        </a>
+        <a href="#" style={iconStyle}>
+          <FaInstagram />
+        </a>
+        <a href="#" style={iconStyle}>
+          <FaLinkedinIn />
+        </a>
+        <a href="#" style={iconStyle}>
+          <FaGithub />
+        </a>
+      </div>
 
-            <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
-              <i className="fab fa-google"></i>
-            </a>
+      {/* Divider */}
+      <div
+        style={{
+          width: "70%",
+          height: "1px",
+          backgroundColor: "#f3c5d2",
+          margin: "30px auto",
+        }}
+      ></div>
 
-            <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
-              <i className="fab fa-instagram"></i>
-            </a>
-
-            <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
-              <i className="fab fa-linkedin"></i>
-            </a>
-
-            <a className="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
-              <i className="fab fa-github"></i>
-            </a>
-            <button style={{border:"1px solid black"}}> <FaXTwitter size={25} /></button>
-           
-          </section>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
-          © 2020 Copyright:
-          <a className="text-dark ms-1" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
-        </div>
-      </footer>
-    </>
+      {/* Copyright */}
+      <p style={{ fontSize: "14px", color: "#6c757d" }}>
+        © {new Date().getFullYear()}{" "}
+        <span style={{ color: "#d63384", fontWeight: "500" }}>YourBrand</span>.
+        All rights reserved.
+      </p>
+    </footer>
   );
 }
+
+// Common style for icons
+const iconStyle = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "40px",
+  height: "40px",
+  borderRadius: "50%",
+  backgroundColor: "#fff",
+  color: "#d63384",
+  border: "1px solid #f3c5d2",
+  fontSize: "18px",
+  margin: "5px",
+  boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+  textDecoration: "none",
+};
 
 export default Footer;

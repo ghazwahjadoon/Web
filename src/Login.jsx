@@ -4,19 +4,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Link } from 'react-router-dom';
 
-// Step 1: Define Zod schema for login validation
+//schema
 const loginSchema = z.object({
   email: z.string().email("Invalid email").nonempty("Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
 function Login() {     
-  // Step 2: Set up useForm with Zod resolver
+ 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginSchema),
   });
 
-  // Step 3: Form submit function
+  
   const onSubmit = (data) => {
     console.log("Form Data:", data);
   };
@@ -52,13 +52,13 @@ function Login() {
                 <hr style={{ borderTop: "2px solid #ffb6c1", width: "50%", margin: "10px auto" }} />
               </div>
 
-              {/* Email Input */}
+              {/* //Email  */}
               <div className="col-12">
-                <label htmlFor="inputEmail4" className="form-label" style={{ color: "#e75480" }}>Email</label>
+                <label htmlFor="inputEmail" className="form-label" style={{ color: "#e75480" }}>Email</label>
                 <input 
                   type="email" 
                   className="form-control" 
-                  id="inputEmail4" 
+                  id="inputEmail" 
                   {...register("email")}
                   style={{
                     border: "1px solid #f5a6c5", 
@@ -69,13 +69,13 @@ function Login() {
                 {errors.email && <p className="text-danger">{errors.email.message}</p>}
               </div>
 
-              {/* Password Input */}
+             {/* //password  */}
               <div className="col-12">
-                <label htmlFor="inputPassword4" className="form-label" style={{ color: "#e75480" }}>Password</label>
+                <label htmlFor="inputPassword" className="form-label" style={{ color: "#e75480" }}>Password</label>
                 <input 
                   type="password" 
                   className="form-control" 
-                  id="inputPassword4" 
+                  id="inputPassword" 
                   {...register("password")}
                   style={{
                     border: "1px solid #f5a6c5", 
@@ -86,7 +86,7 @@ function Login() {
                 {errors.password && <p className="text-danger">{errors.password.message}</p>}
               </div>
               
-              {/* Submit Button */}
+              {/* //button */}
               <div className="col-12 text-center mt-3">
                 <button 
                   type="submit" 

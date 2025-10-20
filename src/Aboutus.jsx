@@ -6,13 +6,13 @@ import "./Aboutus.css";
 function Aboutus() {
   return (
     <>
-      {/* Header Section */}
+      
       <section className="about-header text-center py-4">
         <h1 className="about-title">WE ARE GLOWAH, YOUR TRUST</h1>
         <hr className="about-divider" />
       </section>
 
-      {/* Intro Section */}
+      
       <section className="container about-intro my-4">
         <div className="row align-items-center">
           <div className="col-md-6">
@@ -32,13 +32,13 @@ function Aboutus() {
             <img
               src={haily}
               alt="Glowah Studio"
-              className="img-fluid rounded-4 shadow about-image"
+              className="img-fluid rounded-4  about-image"
             />
           </div>
         </div>
       </section>
 
-      {/* Vision Section */}
+      
       <section className="about-vision py-5 text-center">
         <h2 className="vision-title">Our Vision</h2>
         <p className="vision-text">
@@ -56,7 +56,7 @@ function Aboutus() {
         </p>
       </section>
 
-      {/* Contact Section */}
+     
       <section className="about-contact py-5 text-center">
         <h2 className="contact-title">Contact Us</h2>
         <p className="contact-text">
