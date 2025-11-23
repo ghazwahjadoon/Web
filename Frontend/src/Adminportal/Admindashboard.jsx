@@ -1,219 +1,168 @@
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { useState } from "react";
 
 function Admindashboard() {
+
+  // STATE to track which menu is open
+  const [openMenu, setOpenMenu] = useState(null);
+
+  // function to toggle menus
+  const toggleMenu = (menuName) => {
+    setOpenMenu(openMenu === menuName ? null : menuName);
+  };
+
   return (
     <>
       <div
         className="container-fluid d-flex"
         style={{
-          background: "linear-gradient(to right, #fff5f8, #ffeef3)",
+          backgroundColor: "#f4f5f7",
           minHeight: "100vh",
           fontFamily: "Poppins, sans-serif",
           overflowX: "hidden",
         }}
       >
-        {/* 🌷 Sidebar */}
+        {/* Sidebar */}
         <div
           className="p-4"
           style={{
-            background: "linear-gradient(180deg, #ffcce0, #ffe6ee)",
-            width: "270px",
-            borderTopRightRadius: "25px",
-            borderBottomRightRadius: "25px",
-            boxShadow: "4px 0 15px rgba(255,182,193,0.4)",
+            backgroundColor: "#1f2937",
+            width: "260px",
+            borderTopRightRadius: "20px",
+            borderBottomRightRadius: "20px",
             position: "sticky",
             top: 0,
             height: "100vh",
+            color: "#fff",
           }}
         >
-          <h2
-            className="text-center mb-4"
-            style={{
-              color: "#b30059",
-              fontFamily: "cursive",
-              fontSize: "32px",
-              fontWeight: "bold",
-              letterSpacing: "1px",
-            }}
-          >
+          <h2 className="text-center mb-4" style={{ fontSize: "26px", fontWeight: "600" }}>
             Admin Panel
           </h2>
 
           <ul className="nav flex-column">
+
             {/* Dashboard */}
-            <li className="nav-item mb-3">
+            <li className="nav-item mb-2">
               <Link
                 to="/admindashboard"
                 className="nav-link"
                 style={{
-                  color: "#333",
-                  backgroundColor: "#fff",
-                  borderRadius: "12px",
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "10px",
                   padding: "10px 15px",
-                  boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-                  transition: "0.3s",
                 }}
-               
               >
                 Dashboard
               </Link>
             </li>
 
             {/* Products */}
-            <li className="nav-item mb-3">
-              <details>
-                <summary
-                  className="nav-link"
-                  style={{
-                    color: "#333",
-                    backgroundColor: "#fff",
-                    borderRadius: "12px",
-                    padding: "10px 15px",
-                    boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-                    cursor: "pointer",
-                    listStyle: "none",
-                  }}
-                >
-                   Products
-                </summary>
-                <ul className="nav flex-column ms-3 mt-2">
-                  <li className="nav-item mb-2">
-                    <Link
-                      to="/productlist"
-                      className="nav-link text-dark"
-                      style={{
-                        fontSize: "14px",
-                        backgroundColor: "#fffafc",
-                        borderRadius: "8px",
-                        padding: "6px 12px",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      }}
-                    >
-                      Product List
-                    </Link>
-                  </li>
-                  <li className="nav-item mb-2">
-                    <Link
-                      to="/Addproduct"
-                      className="nav-link text-dark"
-                      style={{
-                        fontSize: "14px",
-                        backgroundColor: "#fffafc",
-                        borderRadius: "8px",
-                        padding: "6px 12px",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      }}
-                    >
-                      Add Product
-                    </Link>
-                  </li>
-                </ul>
-              </details>
+            <li className="nav-item mb-2">
+              
+              <Link to="/ProductsPage"   className="nav-link"
+                style={{
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "10px",
+                  padding: "10px 15px",
+                  cursor: "pointer",
+                }}>
+               
+               
+              
+                Products
+             
+                </Link>
             </li>
 
             {/* Reports */}
-            <li className="nav-item mb-3">
-              <details>
-                <summary
-                  className="nav-link"
-                  style={{
-                    color: "#333",
-                    backgroundColor: "#fff",
-                    borderRadius: "12px",
-                    padding: "10px 15px",
-                    boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-                    cursor: "pointer",
-                  }}
-                >
-                  Reports
-                </summary>
+            <li className="nav-item mb-2">
+              <div
+                onClick={() => toggleMenu("reports")}
+                className="nav-link"
+                style={{
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "10px",
+                  padding: "10px 15px",
+                  cursor: "pointer",
+                }}
+              >
+                Reports
+              </div>
+
+              {openMenu === "reports" && (
                 <ul className="nav flex-column ms-3 mt-2">
                   <li className="nav-item mb-2">
                     <Link
                       to="/salesreport"
-                      className="nav-link text-dark"
-                      style={{
-                        fontSize: "14px",
-                        backgroundColor: "#fffafc",
-                        borderRadius: "8px",
-                        padding: "6px 12px",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      }}
+                      className="nav-link"
+                      style={{ color: "#d1d5db", fontSize: "14px", padding: "6px 12px" }}
                     >
                       Sales Report
                     </Link>
                   </li>
                 </ul>
-              </details>
+              )}
             </li>
 
             {/* Bookings */}
-            <li className="nav-item mb-3">
-              <details>
-                <summary
-                  className="nav-link"
-                  style={{
-                    color: "#333",
-                    backgroundColor: "#fff",
-                    borderRadius: "12px",
-                    padding: "10px 15px",
-                    boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-                    cursor: "pointer",
-                  }}
-                >
-                   Bookings
-                </summary>
+            <li className="nav-item mb-2">
+              <div
+                onClick={() => toggleMenu("bookings")}
+                className="nav-link"
+                style={{
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "10px",
+                  padding: "10px 15px",
+                  cursor: "pointer",
+                }}
+              >
+                Bookings
+              </div>
+
+              {openMenu === "bookings" && (
                 <ul className="nav flex-column ms-3 mt-2">
                   <li className="nav-item mb-2">
                     <Link
                       to="/bookingdetails"
-                      className="nav-link text-dark"
-                      style={{
-                        fontSize: "14px",
-                        backgroundColor: "#fffafc",
-                        borderRadius: "8px",
-                        padding: "6px 12px",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      }}
+                      className="nav-link"
+                      style={{ color: "#d1d5db", fontSize: "14px", padding: "6px 12px" }}
                     >
                       Booking Details
                     </Link>
                   </li>
+
                   <li className="nav-item mb-2">
                     <Link
                       to="/bookingList"
-                      className="nav-link text-dark"
-                      style={{
-                        fontSize: "14px",
-                        backgroundColor: "#fffafc",
-                        borderRadius: "8px",
-                        padding: "6px 12px",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      }}
+                      className="nav-link"
+                      style={{ color: "#d1d5db", fontSize: "14px", padding: "6px 12px" }}
                     >
                       Booking List
                     </Link>
                   </li>
                 </ul>
-              </details>
+              )}
             </li>
 
             {/* Customers */}
-            <li className="nav-item mb-3">
+            <li className="nav-item mb-2">
               <Link
                 to="/admin/customers"
                 className="nav-link"
                 style={{
-                  color: "#333",
-                  backgroundColor: "#fff",
-                  borderRadius: "12px",
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "10px",
                   padding: "10px 15px",
-                  boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-                  transition: "0.3s",
                 }}
               >
-                 Customers
+                Customers
               </Link>
             </li>
 
@@ -223,56 +172,49 @@ function Admindashboard() {
                 to="/logout"
                 className="nav-link"
                 style={{
-                  color: "#b30059",
-                  fontWeight: "bold",
+                  color: "#f87171",
                   marginTop: "25px",
-                  fontSize: "16px",
+                  fontWeight: "600",
                 }}
               >
                 Logout
               </Link>
             </li>
+
           </ul>
         </div>
 
-        {/* 🌼 Main Content */}
+        {/* Main Content */}
         <div className="container-fluid p-5">
           <div
             className="d-flex justify-content-between align-items-center"
             style={{
               backgroundColor: "#fff",
               padding: "15px 25px",
-              borderRadius: "20px",
-              boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
+              borderRadius: "15px",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.08)",
               marginBottom: "30px",
             }}
           >
-            <h3
-              style={{
-                fontFamily: "cursive",
-                fontWeight: "bold",
-                color: "#b30059",
-                margin: 0,
-              }}
-            >
-               Admin Dashboard
+            <h3 style={{ fontWeight: "600", color: "#1f2937", margin: 0 }}>
+              Admin Dashboard
             </h3>
-            <CgProfile size={40} color="#b30059" />
+            <CgProfile size={40} color="#1f2937" />
           </div>
 
           <div
-            className="text-center mt-5 p-5"
+            className="text-center p-5"
             style={{
               backgroundColor: "#fff",
-              borderRadius: "25px",
-              boxShadow: "0 5px 15px rgba(255,182,193,0.3)",
-              color: "#555",
+              borderRadius: "20px",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.06)",
+              color: "#4b5563",
             }}
           >
-            <h4 style={{ fontFamily: "cursive", color: "#b30059" }}>
-              Welcome
+            <h4 style={{ color: "#111827", fontWeight: "600" }}>
+              Welcome to the Admin Panel
             </h4>
-            <p>Manage your beauty products, customers, and bookings here!</p>
+            <p>Manage products, bookings, reports, and customers from here.</p>
           </div>
         </div>
       </div>

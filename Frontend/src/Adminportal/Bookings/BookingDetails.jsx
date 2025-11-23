@@ -31,129 +31,164 @@ function BookingDetails() {
 
   if (!booking) return <h3 style={{ textAlign: "center" }}>Loading...</h3>;
 
+  // --- Styles for a Black and White Aesthetic ---
+
+  // Grayscale palette
+  const white = "#FFFFFF";
+  const black = "#000000";
+  const lightGray = "#F5F5F5"; // Background
+  const mediumGray = "#E0E0E0"; // Borders/Dividers
+  const darkGray = "#333333"; // Text
+
+  // Status style utility
+  const getStatusStyles = (status) => {
+    let color, bgColor;
+    switch (status) {
+      case "Approved":
+        color = black;
+        bgColor = "#BDBDBD"; // Darker gray for approved
+        break;
+      case "Cancelled":
+        color = black;
+        bgColor = "#BDBDBD"; // Darker gray for cancelled
+        break;
+      default: // Pending
+        color = black;
+        bgColor = "#EEEEEE"; // Lightest gray for pending
+    }
+    return { color, bgColor };
+  };
+
+  const statusStyles = getStatusStyles(booking.status);
+
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #fff5f8, #ffeef3)",
+        background: lightGray,
         minHeight: "100vh",
-        padding: "40px 0",
-        fontFamily: "Poppins, sans-serif",
+        padding: "60px 20px",
+        fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         style={{
-          background: "#fff",
-          width: "90%",
-          maxWidth: "600px",
+          background: white,
+          width: "100%",
+          maxWidth: "500px",
           margin: "auto",
-          padding: "25px",
-          borderRadius: "20px",
-          boxShadow: "0 5px 15px rgba(255,182,193,0.4)",
+          padding: "30px",
+          borderRadius: "10px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", // Subtle shadow
         }}
       >
         <h2
           style={{
             textAlign: "center",
-            color: "#b30059",
-            marginBottom: "20px",
-            fontFamily: "cursive",
+            color: black,
+            marginBottom: "30px",
+            fontSize: "1.8rem",
+            borderBottom: `1px solid ${mediumGray}`,
+            paddingBottom: "15px",
+            fontWeight: "normal",
           }}
         >
-          💖 Booking Details
+          📋 Booking Details
         </h2>
 
-        <p>
-          <b style={{ color: "#b30059" }}>Client:</b> {booking.name}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Email:</b> {booking.email}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Phone:</b> {booking.phone}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Service:</b> {booking.service}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Date:</b> {booking.date}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Time:</b> {booking.time}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Notes:</b> {booking.notes}
-        </p>
-        <p>
-          <b style={{ color: "#b30059" }}>Status:</b>{" "}
-          <span
-            style={{
-              background:
-                booking.status === "Approved"
-                  ? "#d4f8d4"
-                  : booking.status === "Cancelled"
-                  ? "#ffd6d6"
-                  : "#fff0f5",
-              color:
-                booking.status === "Approved"
-                  ? "#228B22"
-                  : booking.status === "Cancelled"
-                  ? "#b30000"
-                  : "#b30059",
-              padding: "5px 10px",
-              borderRadius: "10px",
-              fontWeight: "bold",
-            }}
-          >
-            {booking.status}
-          </span>
-        </p>
+        {/* Details List */}
+        <div style={{ marginBottom: "20px" }}>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Client:</b> {booking.name}
+          </p>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Email:</b> {booking.email}
+          </p>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Phone:</b> {booking.phone}
+          </p>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Service:</b> {booking.service}
+          </p>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Date:</b> {booking.date}
+          </p>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Time:</b> {booking.time}
+          </p>
+          <p style={{ margin: "12px 0", borderBottom: `1px dashed ${mediumGray}`, paddingBottom: "8px" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Notes:</b> {booking.notes}
+          </p>
+          <p style={{ margin: "12px 0" }}>
+            <b style={{ color: darkGray, minWidth: "90px", display: "inline-block" }}>Status:</b>{" "}
+            <span
+              style={{
+                background: statusStyles.bgColor,
+                color: statusStyles.color,
+                padding: "4px 12px",
+                borderRadius: "20px",
+                fontWeight: "bold",
+                fontSize: "0.9rem",
+                border: `1px solid ${black}`,
+              }}
+            >
+              {booking.status}
+            </span>
+          </p>
+        </div>
 
         {/* Buttons Section */}
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            marginTop: "25px",
+            marginTop: "30px",
+            gap: "10px",
           }}
         >
           <button
             onClick={handleApprove}
             style={{
-              background: "#ff9eb5",
-              color: "#fff",
+              flex: 1,
+              background: black, // Solid black button
+              color: white,
               border: "none",
-              borderRadius: "10px",
-              padding: "10px 20px",
+              borderRadius: "5px",
+              padding: "10px 15px",
               cursor: "pointer",
               fontWeight: "600",
             }}
           >
-            ✅ Approve
+             Approve
           </button>
 
           <button
             onClick={handleCancel}
             style={{
-              background: "#ff6b81",
-              color: "#fff",
+              flex: 1,
+              background: darkGray, // Dark gray button
+              color: white,
               border: "none",
-              borderRadius: "10px",
-              padding: "10px 20px",
+              borderRadius: "5px",
+              padding: "10px 15px",
               cursor: "pointer",
               fontWeight: "600",
             }}
           >
-            ❌ Cancel
+             Cancel
           </button>
 
           <Link
             to="/bookingList"
             style={{
-              background: "#ffe6ee",
-              color: "#b30059",
-              border: "none",
-              borderRadius: "10px",
-              padding: "10px 20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flex: 1,
+              background: white, // White button with black border
+              color: black,
+              border: `1px solid ${black}`,
+              borderRadius: "5px",
+              padding: "10px 15px",
               textDecoration: "none",
               fontWeight: "600",
             }}

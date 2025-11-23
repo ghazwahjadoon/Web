@@ -13,3 +13,6 @@ export const BookingAPI= async(data)=>{
 export const SigninAPI=async (data)=>{
     return axios.post(`${API_BASE_URL}/Signin`,data);
 }
+export const addProductAPI=async(data)=>{
+    return axios.post(`${API_BASE_URL}/addProduct`,data);
+}

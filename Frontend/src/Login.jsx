@@ -18,13 +18,9 @@ function Login() {
   });
 
   
-  const onSubmit = async (data) => {
-   try{
-    const response=await loginAPI(data);
-    console.log("Login successful:",data);
-   }catch(error){
-    console.error("Login failed:",error);
-   }
+  const onSubmit = async (e) => {
+
+  await loginAPI(e);
   };
 
   return (

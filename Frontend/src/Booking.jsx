@@ -23,12 +23,7 @@ function Booking() {
   });
 
   const onSubmit = async(data) => {
-    try{
-      const response=await BookingAPI(data);
-      console.log("Booking successful:",data);
-    }catch(error){
-      console.error("Booking failed:",error);
-    }
+    await BookingAPI(data);
   };
 
   return (

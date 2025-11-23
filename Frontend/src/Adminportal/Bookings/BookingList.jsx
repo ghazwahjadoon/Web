@@ -40,7 +40,7 @@ function BookingList() {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #fff5f8, #ffeef3)",
+      
         minHeight: "100vh",
         padding: "40px 0",
         fontFamily: "Poppins, sans-serif",
@@ -54,27 +54,27 @@ function BookingList() {
           margin: "auto",
           padding: "25px",
           borderRadius: "20px",
-          boxShadow: "0 5px 15px rgba(255,182,193,0.4)",
+          boxShadow: "0 5px 15px rgba(238, 109, 124, 0.4)",
         }}
       >
         <h2
           style={{
             textAlign: "center",
-            color: "#b30059",
+           
             marginBottom: "25px",
             fontFamily: "cursive",
           }}
         >
           Booking List
         </h2>
-
-        <table
+       <hr style={{color:'red'}}/>
+        <table className="table table-hover"
           style={{
             width: "100%",
             borderCollapse: "collapse",
             textAlign: "center",
             borderRadius: "10px",
-            overflow: "hidden",
+           
           }}
         >
           <thead>
@@ -129,4 +129,4 @@ function BookingList() {
   );
 }
 
-export default BookingList;
+export default BookingList;

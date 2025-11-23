@@ -80,7 +80,7 @@ function Gallery() {
             key={product.id} 
             className="col-12 col-sm-6 col-md-4 col-lg-3   justify-content-center"
           >
-            <div className="card w-100" style={{ width: "10rem" }}>
+            <div className="card  w-100" style={{ width: "10rem" , borderRadius: "25px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"}}>
               <img 
                 className="card-img-top" 
                 src={product.image} 

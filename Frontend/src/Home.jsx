@@ -15,7 +15,7 @@ function Home() {
   return (
 
   <>  
-  <div className='container-fluid 'style={{ background: "linear-gradient(120deg, #fce4ec, #e8f5e9)",}}>
+  <div className='container-fluid ' >
        <div className='row'>
           <div className='col'>
             {/* <Login/> */}
@@ -27,26 +27,19 @@ function Home() {
               */}
           </div>
        </div>
-       <div className='row'>
+       <div className='row' >
          <div className='col'>
               <Cover/>
          </div>
 
        </div>
-        <div className='row'>
+        <div className='row'  >
          <div className='col'>
             <Gallery/>
          </div>
 
        </div>
-       <div className='row'>
-         <div className='col'>
-            
-           
-           
-         </div>
-
-       </div>
+     
         <div className='row'>
          <div className='col'>
              

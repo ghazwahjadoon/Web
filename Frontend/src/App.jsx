@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar  />
-      <div className="container-fluid my-4">
+      <div className="container-fluid my-0 mz-0 p-0">
        
         <Outlet /> {/* This is where the selected page will appear */}
       </div>

@@ -18,14 +18,9 @@ function Signin() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async(data) => {
-    try{
-      const response=await SigninAPI(data);
-      console.log("Signin successful:",data);
-    } 
-    catch(error){
-      console.error("Signin failed:",error);
-    }
+  const onSubmit = async(e) => {
+    
+      await SigninAPI(e);
   };
 
   return (
