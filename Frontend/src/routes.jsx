@@ -16,6 +16,7 @@ import BookingDetails from "./Adminportal/Bookings/BookingDetails";
 import SalesReport from './Adminportal/Reports/SalesReport';
 import ProductsPage from "./Adminportal/Products/ProductsPage";
 
+import Cart from './Cart';
 
 const  router=createBrowserRouter(
     [     {
@@ -34,9 +35,11 @@ const  router=createBrowserRouter(
         {path: '/Addproduct',element:<Addproduct/>},
         {path:"/ProductsPage",element:<ProductsPage/>},
         {path: '/SalesReport',element:<SalesReport/>},
-        {path:'/Admindashboard',element:<Admindashboard/>},
-        { path: '/BookingDetails/:id', element: <BookingDetails/> }
-
+        {path:'/admin',element:<Admindashboard/>},
+        { path: '/BookingDetails/:id', element: <BookingDetails/> },
+       
+        {path:'/Cart', element:<Cart/>},
+      
        
     ]}]
 )

@@ -4,7 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import "bootstrap/dist/css/bootstrap.min.css";
 import models from "./assets/models1.jpg";
-import { BookingAPI } from "./Service/Api";
+import { createBooking} from "./Service/Api";
 
 const schema = z.object({
   name: z.string().min(3, { message: "Full name must be at least 3 characters" }),
@@ -23,7 +23,14 @@ function Booking() {
   });
 
   const onSubmit = async(data) => {
-    await BookingAPI(data);
+      try {
+    const res = await createBooking(data);
+    alert("Booking Confirmed!");
+    console.log(res.data);
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong!");
+  }
   };
 
   return (

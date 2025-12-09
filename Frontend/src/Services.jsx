@@ -12,6 +12,7 @@ import B3 from './assets/Barat3.jpg'
 import B4 from './assets/Bride2.jpg'
 import B5 from './assets/Bride5.jpg';
 import bg from './assets/bg.jpg'
+import { Link } from 'react-router-dom';
 function Services() {
   const NikkahLooks = [
     { id: 1, name: 'Blossom Look', image: Nikkahlook1 },
@@ -66,7 +67,7 @@ function Services() {
                     <p className="card-text" style={{ fontFamily: "Bradley Hand ITC" }}>
                       {look.name}
                     </p>
-                    <button type="button" class="btn btn-outline-dark">BOOK NOW</button>
+                    <Link to="/Booking"  ><button type="button" className="btn btn-outline-dark" onClick={() => handleBookNow(look.name)}>BOOK NOW</button></Link> 
                   </div>
                 </div>
               </div>
@@ -92,7 +93,7 @@ function Services() {
                     <p className="card-text" style={{ fontFamily: "Bradley Hand ITC" }}>
                       {look.name}
                     </p>
-                    <button type="button" className="btn btn-outline-dark" onClick={() => handleBookNow(look.name)}>BOOK NOW</button>
+                   <Link to="/Booking"  ><button type="button" className="btn btn-outline-dark" onClick={() => handleBookNow(look.name)}>BOOK NOW</button></Link> 
                   </div>
                 </div>
               </div>

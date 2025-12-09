@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { SigninAPI } from "./Service/Api";
+import { registerUser } from "./Service/Api";
+
 
 const schema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
@@ -18,16 +19,21 @@ function Signin() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async(e) => {
-    
-      await SigninAPI(e);
-  };
-
+  const onSubmit = async(data) => {
+   try {
+      const res = await registerUser(data);
+      alert(" Registered");
+      console.log(res.data);
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong!");
+    }
+};
   return (
     <div className="container-fluid bg-light vh-100 d-flex justify-content-center align-items-center">
       <div className="shadow-lg p-4" style={{ width: "100%", maxWidth: "500px", backgroundColor: "white" }}>
         <h3 className="text-center mb-4" style={{ fontFamily: "Times New Roman", color: "lightpink", fontWeight: "bold" }}>
-          --- SIGN IN ---
+          --- SIGN UP ---
         </h3>
 
         <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
